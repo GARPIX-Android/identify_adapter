@@ -1,0 +1,3 @@
+rootProject.name = "Universal Adapter"
+include ':app'
+include ':mylibrary'
