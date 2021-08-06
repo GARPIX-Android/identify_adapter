@@ -4,6 +4,10 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
+/**
+ * Provide for adding horizontal margins for items in recyclerview
+ */
+
 class HorizontalDividerItemDecoration(
     private val divider: Int,
 ) : RecyclerView.ItemDecoration() {
