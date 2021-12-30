@@ -20,7 +20,7 @@ set unique behavior for each type of object separately
 Step 1. Add the JitPack repository to your build file
 Add it in your root build.gradle at the end of repositories:
 
-```sh
+```groovy
 allprojects {
 	repositories {
 		...
@@ -30,7 +30,7 @@ allprojects {
 ```
 Step 2. Add the dependency
 
-```sh
+```groovy
 implementation 'com.github.GARPIX-Android:identify_adapter:1.0.1'
 ```
 
@@ -38,7 +38,7 @@ implementation 'com.github.GARPIX-Android:identify_adapter:1.0.1'
 
 1. Implement the required date classes from the Item interface
 
-```sh
+```kotlin
 data class NewsItem(val title : String, val image : String) : Item
 
 data class TitleItem(val title : String)  : Item
@@ -60,7 +60,7 @@ For example:
 
 >`IdentifyNews.kt`
 
-```sh
+```kotlin
 class IdentifyNews : ItemIdentify<ItemNewsBinding, NewsItem> {
 
     override fun getDiffUtil() = object : DiffUtil.ItemCallback<NewsItem>() {
@@ -97,7 +97,7 @@ class NewsViewHolder(binding: ItemNewsBinding) : BaseViewHolder<ItemNewsBinding,
 
 >'TestingActivity.kt'
 
-```sh
+```kotlin
 class TestingActivity : AppCompatActivity() {
 
   private lateinit var binding: ActivityTestingBinding
@@ -121,7 +121,7 @@ class TestingActivity : AppCompatActivity() {
 
 >'TestingActivity.kt'
 
-```sh
+```kotlin
  with(binding.recycler) {
             layoutManager = LinearLayoutManager(this@TestingActivity)
             adapter = this@TestingActivity.adapter
@@ -136,7 +136,7 @@ class TestingActivity : AppCompatActivity() {
 
 >'TestingActivity.kt'
 
-```sh
+```kotlin
 lifecycleScope.launchWhenStarted {
             viewModel.fetchData
                 .collect {
